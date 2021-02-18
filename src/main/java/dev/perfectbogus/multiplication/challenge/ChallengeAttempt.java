@@ -15,7 +15,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class ChallengeAttempt {
     private Long id;
-    private Long userId;
+    private User userId;
     private int factorA;
     private int facterB;
     private int resultAttempt;

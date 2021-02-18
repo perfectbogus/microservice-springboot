@@ -1,6 +1,5 @@
 package dev.perfectbogus.multiplication.challenge;
 
-
 import dev.perfectbogus.multiplication.user.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,9 +30,11 @@ public class ChallengeAttemptControllerTest {
     @Autowired
     private MockMvc mvc;
 
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private JacksonTester<ChallengeAttemptDTO> jsonRequestAttempt;
 
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private JacksonTester<ChallengeAttempt> jsonResultAttempt;
 
@@ -47,7 +48,7 @@ public class ChallengeAttemptControllerTest {
                 new ChallengeAttemptDTO(50, 70, "John", 3500);
 
         ChallengeAttempt expectedResponse =
-                new ChallengeAttempt(attemptId, 1L, 50, 70, 3500, true);
+                new ChallengeAttempt(attemptId, user, 50, 70, 3500, true);
 
         given(challengeService.verifyAttempt(eq(attemptDTO))).willReturn(expectedResponse);
 
