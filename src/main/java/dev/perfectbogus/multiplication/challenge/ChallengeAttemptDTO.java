@@ -19,6 +19,6 @@ public class ChallengeAttemptDTO {
     @NotBlank
     String userAlias;
 
-    @Positive
+    @Positive(message = "How could you possibly get a negative result here? Try again.")
     int guess;
 }
